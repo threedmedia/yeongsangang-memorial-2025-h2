@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>갤러리 - 자랑스러운 나주 알기</title>
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="js/gallery.js">
+</head>
+
+<body>
+    <!-- 모바일 메뉴 토글 -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- 스크롤 인디케이터 -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- 사이드바 네비게이션 -->
+    <nav class="sidebar" id="sidebar">
+        <a href="index.html" div class="sidebar-header">
+            <div class="sidebar-title">자랑스러운 나주 알기</div>
+            <div class="sidebar-subtitle">내가 만드는 3D 역사박물관</div>
+        </a>
+        <div class="sidebar-nav">
+            <ul>
+                <li><a href="#exhibition" class="nav-link">전시 사진</a></li>
+                <li><a href="#artifacts" class="nav-link">유물 사진</a></li>
+                <li><a href="#activities" class="nav-link">활동 사진</a></li>
+                <li><a href="#locations" class="nav-link">장소 사진</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <!-- 히어로 섹션 -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>📸 갤러리</h1>
+                <p>나주의 역사와 문화를 담은 소중한 순간들</p>
+            </div>
+        </section>
+
+        <!-- 갤러리 섹션 -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">사진 갤러리</h2>
+                <p class="section-subtitle">프로젝트의 다양한 활동과 발견들</p>
+            </div>
+
+            <!-- 갤러리 필터 -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="exhibition">전시</button>
+                <button class="filter-btn" data-filter="artifacts">유물</button>
+                <button class="filter-btn" data-filter="activities">활동</button>
+                <button class="filter-btn" data-filter="locations">장소</button>
+            </div>
+
+            <!-- 갤러리 그리드 -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- 전시 사진 -->
+                <div class="gallery-item" data-category="exhibition">
+                    <div class="image-placeholder">🏛️</div>
+                    <div class="gallery-item-category">전시</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">디지털 박물관 전시</div>
+                        <div class="gallery-item-description">3D 스캔을 통한 몰입형 전시 공간</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="exhibition">
+                    <div class="image-placeholder">🎭</div>
+                    <div class="gallery-item-category">전시</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">역할극 공연</div>
+                        <div class="gallery-item-description">역사적 순간을 재현한 체험형 공연</div>
+                    </div>
+                </div>
+
+                <!-- 유물 사진 -->
+                <div class="gallery-item" data-category="artifacts">
+                    <div class="image-placeholder">⚔️</div>
+                    <div class="gallery-item-category">유물</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">고대 무기 유물</div>
+                        <div class="gallery-item-description">시대별 무기의 발전 과정을 보여주는 귀중한 유물</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="artifacts">
+                    <div class="image-placeholder">🏺</div>
+                    <div class="gallery-item-category">유물</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">전통 도자기</div>
+                        <div class="gallery-item-description">나주 지역의 전통 도자기 문화</div>
+                    </div>
+                </div>
+
+                <!-- 활동 사진 -->
+                <div class="gallery-item" data-category="activities">
+                    <div class="image-placeholder">📱</div>
+                    <div class="gallery-item-category">활동</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">AR 체험 활동</div>
+                        <div class="gallery-item-description">증강현실을 활용한 역사 체험</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="activities">
+                    <div class="image-placeholder">🤝</div>
+                    <div class="gallery-item-category">활동</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">팀 협력 활동</div>
+                        <div class="gallery-item-description">함께 문제를 해결하는 협동 미션</div>
+                    </div>
+                </div>
+
+                <!-- 장소 사진 -->
+                <div class="gallery-item" data-category="locations">
+                    <div class="image-placeholder">🏛️</div>
+                    <div class="gallery-item-category">장소</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">금성관</div>
+                        <div class="gallery-item-description">조선시대 객사 건물의 아름다운 모습</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="locations">
+                    <div class="image-placeholder">🌳</div>
+                    <div class="gallery-item-category">장소</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">쌍둥이 은행나무</div>
+                        <div class="gallery-item-description">650년 된 나주의 상징적인 보호수</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="locations">
+                    <div class="image-placeholder">🗿</div>
+                    <div class="gallery-item-category">장소</div>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">금성토평비</div>
+                        <div class="gallery-item-description">동학농민운동의 역사를 담은 기념비</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 라이트박스 모달 -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <div class="lightbox-title" id="lightboxTitle"></div>
+                <div class="lightbox-description" id="lightboxDescription"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

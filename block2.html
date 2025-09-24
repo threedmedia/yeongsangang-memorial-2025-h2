@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>마이크로 금성관을 구하라</title>
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="js/sub.js">
+</head>
+
+<body>
+    <!-- 모바일 메뉴 토글 -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- 스크롤 인디케이터 -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- 사이드바 네비게이션 -->
+    <nav class="sidebar" id="sidebar">
+        <a href="index.html" div class="sidebar-header">
+            <div class="sidebar-title">자랑스러운 나주 알기</div>
+            <div class="sidebar-subtitle">내가 만드는 3D 역사박물관</div>
+        </a>
+        <div class="sidebar-nav">
+            <ul>
+                <li><a href="#story" class="nav-link">이야기</a></li>
+                <li><a href="#section1" class="nav-link">역할극 보기</a></li>
+                <li><a href="#section2" class="nav-link">인터뷰</a></li>
+                <li><a href="#section3" class="nav-link">활동스케치</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <!-- 히어로 섹션 -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>마이크로 금성관을 구하라</h1>
+                <p>까치팀의 금성관 외교 위기 극복 미션</p>
+            </div>
+        </section>
+
+        <!-- 스토리 섹션 -->
+        <section id="story" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">📖 이야기</h2>
+                <p class="section-subtitle">까치팀의 프로젝트</p>
+            </div>
+
+            <div class="story-grid">
+                <div class="story-card">
+                    <h3 class="story-card-title">□ 까치팀</h3>
+                    <div class="story-card-content">
+                        마이크로 금성관을 구하라
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-card-title">◎ 장소</h3>
+                    <div class="story-card-content">
+                        금성관<br><br>
+                        조선시대 지어진 객사로 왕을 상징하는 전패를 모시고 외국사신을 맞이했던 중요한 건물
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-card-title">◎ 스토리 정리</h3>
+                    <div class="story-card-content">
+                        기분이 좋지 않은 외국 사신을 대상으로 마이크를 사용하여 외교적 위기를 극복함.
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-card-title">◎ 미션 수행</h3>
+                    <div class="story-card-content">
+                        - 조선시대 지어진 객사로 왕을 상징하는 전패를 모시고 외국사신을 맞이했던 중요한 건물<br>
+                        - 단악단과 사진을 찍는 AR 미션 수행<br>
+                        - 금성관 연못에서 보물찾기 미션 수행
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 역할극 섹션 -->
+        <section id="section1" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">🎭 역할극 보기</h2>
+                <p class="section-subtitle">외교 위기 극복 드라마</p>
+            </div>
+
+            <div class="interview-section">
+                <div class="single-video">
+                    <iframe src="https://drive.google.com/file/d/1OPxPTS5eCwDkIuDmHvCg-zdazSnD7e4p/preview"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 인터뷰 섹션 -->
+        <section id="section2" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">🎤 인터뷰</h2>
+                <p class="section-subtitle">참가자들의 생생한 경험담</p>
+            </div>
+
+            <div class="interview-section">
+                <div class="single-video">
+                    <iframe src="https://drive.google.com/file/d/1BUoIf8sw-Zv0iNsYiLWTBa7paNYireMy/preview"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 활동스케치 섹션 -->
+        <section id="section3" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">📸 활동스케치</h2>
+                <p class="section-subtitle">미션 수행 과정 기록</p>
+            </div>
+
+            <div class="interview-section">
+                <div class="single-video">
+                    <iframe src="https://drive.google.com/file/d/1qB8g8wyssQB3MKoJeNxn5HEERrKuCvJ8/preview"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</html>

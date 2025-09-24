@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>역사박물관</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="js/index.js">
+</head>
+
+<body>
+    <!-- 메인 페이지 -->
+    <div id="main-page">
+        <!-- 풀샷 배경 이미지 섹션 -->
+        <section class="fullshot-section">
+            <div class="overlay-text">
+                <h1>영산강 메모리얼 홀</h1>
+                <p>과거와 현재가 만나는 영산강을 따라</p>
+            </div>
+        </section>
+
+        <!-- 컨텐츠 섹션 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">전시관 안내</h2>
+
+                <div class="category-grid">
+                    <a href="block1.html" div class="category-card fade-in" onclick="showCategory('weapon')">
+                        <span class="category-icon">⚔️</span>
+                        <h3 class="category-title">무기관</h3>
+                        <p class="category-description">고대부터 근세까지 다양한 전투 무기들과 방어구를 통해 우리 조상들의 전쟁 문화와 무예 정신을 살펴볼 수 있습니다.
+                        </p>
+                    </a>
+
+                    <a href="block2.html" div class="category-card fade-in" onclick="showCategory('jewelry')">
+                        <span class="category-icon">👑</span>
+                        <h3 class="category-title">장신구관</h3>
+                        <p class="category-description">화려한 금관, 목걸이, 팔찌 등 고대 장신구를 통해 당시의 뛰어난 예술 감각과 사회적 지위를 엿볼 수 있습니다.
+                        </p>
+                    </a>
+
+                    <a href="block3.html" div class="category-card fade-in" onclick="showCategory('tomb')">
+                        <span class="category-icon">🏛️</span>
+                        <h3 class="category-title">고분관</h3>
+                        <p class="category-description">고대 무덤의 구조와 부장품들을 통해 당시 사람들의 내세관과 독특한 장례 문화를 깊이 있게 이해할 수 있습니다.
+                        </p>
+                    </a>
+
+                    <a href="block4.html" div class="category-card fade-in" onclick="showCategory('tools')">
+                        <span class="category-icon">🔨</span>
+                        <h3 class="category-title">농기구관</h3>
+                        <p class="category-description">농업 발달사를 보여주는 다양한 농기구들과 생활 도구를 통해 조상들의 삶의 지혜와 기술 발전을 배워보세요.</p>
+                    </a>
+                </div>
+
+                <a href="gallery.html" div class="gallery-section">
+                    <h2 class="gallery-title">🎨 특별 전시 갤러리</h2>
+                    <p class="gallery-description">
+                        계절별 특별 전시와 테마 전시를 통해 더욱 깊이 있는 역사 체험을 제공합니다.<br>
+                        현재 "조선시대 왕실 문화" 특별 전시가 진행 중입니다.
+                    </p>
+                    <a href="#" class="gallery-btn" onclick="showCategory('gallery')">갤러리 둘러보기</a>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- 서브 페이지들 -->
+    <div id="weapon-page" class="sub-page">
+        <button class="back-btn" onclick="showMainPage()">← 메인으로</button>
+
+        <div class="sub-header">
+            <h1 class="sub-title">무기관</h1>
+            <p class="sub-subtitle">우리 조상들의 무예와 전쟁 문화</p>
+        </div>
+
+        <nav class="sub-nav">
+            <div class="sub-nav-list">
+                <a href="#" class="sub-nav-item active">전체보기</a>
+                <a href="#" class="sub-nav-item">검류</a>
+                <a href="#" class="sub-nav-item">궁시류</a>
+                <a href="#" class="sub-nav-item">갑옷</a>
+            </div>
+        </nav>
+
+        <div class="sub-content">
+            <div class="item-card">
+                <div class="item-title">🗡️ 환두 대도</div>
+                <p class="item-description">"칼은 사람의 마음을 담은 물건으로 평소에 몸을 닦고, 적에게 쓸 때 용감하게 싸우는 것이다"라고 여겨졌다. 철로 제작된 긴 칼로써
+                    고구려와 백제의 무덤에서 많이 발견된다.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">🏹 신장 이유</div>
+                <p class="item-description">원거리 무기의 대표격인 활과 화살. 사냥과 전투에서 핵심적인 역할을 했으며, 삼국시대부터 조선시대까지 꾸준히 발전했다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="jewelry-page" class="sub-page">
+        <button class="back-btn" onclick="showMainPage()">← 메인으로</button>
+
+        <div class="sub-header">
+            <h1 class="sub-title">장신구관</h1>
+            <p class="sub-subtitle">고대인들의 아름다움과 권위의 상징</p>
+        </div>
+
+        <nav class="sub-nav">
+            <div class="sub-nav-list">
+                <a href="#" class="sub-nav-item active">전체보기</a>
+                <a href="#" class="sub-nav-item">금관</a>
+                <a href="#" class="sub-nav-item">목걸이</a>
+                <a href="#" class="sub-nav-item">팔찌</a>
+            </div>
+        </nav>
+
+        <div class="sub-content">
+            <div class="item-card">
+                <div class="item-title">👑 신라 금관</div>
+                <p class="item-description">신라 왕족의 위상을 보여주는 화려한 금관. 나무와 사슴뿔 모양의 장식이 특징이며, 샤머니즘적 요소를 담고 있다.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">📿 곡옥 목걸이</div>
+                <p class="item-description">구부러진 옥 모양의 장신구로 고대 동아시아 전역에서 발견되는 권위의 상징물이다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tomb-page" class="sub-page">
+        <button class="back-btn" onclick="showMainPage()">← 메인으로</button>
+
+        <div class="sub-header">
+            <h1 class="sub-title">고분관</h1>
+            <p class="sub-subtitle">죽음 너머의 세계관과 장례문화</p>
+        </div>
+
+        <nav class="sub-nav">
+            <div class="sub-nav-list">
+                <a href="#" class="sub-nav-item active">전체보기</a>
+                <a href="#" class="sub-nav-item">고구려 고분</a>
+                <a href="#" class="sub-nav-item">백제 고분</a>
+                <a href="#" class="sub-nav-item">신라 고분</a>
+            </div>
+        </nav>
+
+        <div class="sub-content">
+            <div class="item-card">
+                <div class="item-title">🏛️ 천마총 구조</div>
+                <p class="item-description">신라 고분의 대표적인 예로, 거대한 돌무지 덧널무덤 구조를 가지고 있으며 많은 금제 유물이 출토되었다.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">⚱️ 부장품 문화</div>
+                <p class="item-description">죽은 자가 내세에서도 풍족하게 살 수 있도록 무덤에 함께 묻은 각종 물품들로 당시의 내세관을 보여준다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tools-page" class="sub-page">
+        <button class="back-btn" onclick="showMainPage()">← 메인으로</button>
+
+        <div class="sub-header">
+            <h1 class="sub-title">농기구관</h1>
+            <p class="sub-subtitle">농업문명의 발달과 생활의 지혜</p>
+        </div>
+
+        <nav class="sub-nav">
+            <div class="sub-nav-list">
+                <a href="#" class="sub-nav-item active">전체보기</a>
+                <a href="#" class="sub-nav-item">경작도구</a>
+                <a href="#" class="sub-nav-item">수확도구</a>
+                <a href="#" class="sub-nav-item">생활도구</a>
+            </div>
+        </nav>
+
+        <div class="sub-content">
+            <div class="item-card">
+                <div class="item-title">🔨 석제 농기구</div>
+                <p class="item-description">신석기 시대부터 사용된 돌로 만든 농기구들. 간석기 기술의 발달로 더욱 정교하고 효율적으로 제작되었다.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">🌾 철제 낫</div>
+                <p class="item-description">철기 시대 이후 농업 생산성을 크게 향상시킨 철제 수확 도구. 곡물 수확의 효율성을 대폭 개선했다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery-page" class="sub-page">
+        <button class="back-btn" onclick="showMainPage()">← 메인으로</button>
+
+        <div class="sub-header">
+            <h1 class="sub-title">특별 전시 갤러리</h1>
+            <p class="sub-subtitle">계절별 테마 전시와 특별 기획전</p>
+        </div>
+
+        <nav class="sub-nav">
+            <div class="sub-nav-list">
+                <a href="#" class="sub-nav-item active">현재 전시</a>
+                <a href="#" class="sub-nav-item">지난 전시</a>
+                <a href="#" class="sub-nav-item">예정 전시</a>
+            </div>
+        </nav>
+
+        <div class="sub-content">
+            <div class="item-card">
+                <div class="item-title">🎭 조선시대 왕실 문화전</div>
+                <p class="item-description">조선 왕조 500년의 화려한 궁중 문화를 한눈에 볼 수 있는 특별 기획전. 왕실 의복, 장신구, 생활용품 등을 전시합니다.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">🏺 고구려 고분 벽화전</div>
+                <p class="item-description">유네스코 세계문화유산에 등재된 고구려 고분 벽화의 아름다움과 의미를 디지털 복원 기술로 생생하게 재현합니다.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
