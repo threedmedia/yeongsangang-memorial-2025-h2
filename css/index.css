@@ -19,7 +19,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 메인 페이지 스타일 */
+/* ======= 메인 페이지 스타일 ======= */
 #main-page {
     width: 100%;
     min-height: 100vh;
@@ -32,9 +32,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 140px;
 }
 
-/* 배경 오버레이 */
 #main-page::before {
     content: '';
     position: absolute;
@@ -46,7 +46,7 @@ body {
     z-index: 1;
 }
 
-/* 오버레이 텍스트 */
+/* ======= 오버레이 텍스트 ======= */
 .overlay-text {
     color: white;
     text-align: center;
@@ -62,6 +62,9 @@ body {
     margin-bottom: 20px;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
     letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+    animation: fadeInUp 1.2s ease-out 1.2s forwards;
 }
 
 .overlay-text p {
@@ -69,9 +72,25 @@ body {
     margin: 0;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     font-weight: 300;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out 0.5s forwards;
+    transition: transform 0.3s ease;
 }
 
-/* 메인 컨텐츠 섹션 */
+.overlay-text p:hover {
+    transform: scale(1.05);
+}
+
+/* ======= 애니메이션 키프레임 ======= */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ======= 컨텐츠 섹션 ======= */
 .content-section {
     width: 100%;
     padding: 0;
@@ -92,7 +111,7 @@ body {
     justify-content: center;
 }
 
-/* 갤러리 섹션 */
+/* ======= 갤러리 섹션 ======= */
 .gallery-section {
     text-align: center;
     margin-bottom: 60px;
@@ -113,7 +132,6 @@ body {
     font-size: 1.4em;
     transition: all 0.4s ease;
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-    border: 3px solid transparent;
     position: relative;
     overflow: hidden;
 }
@@ -140,7 +158,7 @@ body {
     color: #000;
 }
 
-/* 카테고리 그리드 */
+/* ======= 카테고리 그리드 ======= */
 .category-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -199,16 +217,11 @@ body {
 
 .category-icon img {
     width: 100px;
-    /* 원하는 가로 크기 */
     height: 100px;
-    /* 원하는 세로 크기 */
     object-fit: contain;
-    /* 이미지 비율 유지 */
     display: block;
     margin: 0 auto;
-    /* 가운데 정렬 */
 }
-
 
 .category-card:hover .category-icon {
     transform: scale(1.1);
@@ -238,7 +251,7 @@ body {
     color: rgba(255, 215, 0, 0.95);
 }
 
-/* 서브페이지 스타일 */
+/* ======= 서브페이지 스타일 ======= */
 .sub-page {
     display: none;
     background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
@@ -436,7 +449,7 @@ body {
     color: #000;
 }
 
-/* Footer 디자인 */
+/* ======= Footer 디자인 ======= */
 footer {
     background: linear-gradient(135deg, #2C1810 0%, #1A0F08 100%);
     backdrop-filter: blur(10px);
@@ -468,19 +481,15 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    /* footer와 familysite 간격 조정 */
     flex-wrap: wrap;
 }
 
-/* 패밀리사이트 드롭박스 스타일링 */
 .familysite {
     position: relative;
 }
 
 .familysite select {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.1) 0%,
-            rgba(255, 255, 255, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     color: #fff;
@@ -495,13 +504,10 @@ footer {
     -webkit-appearance: none;
     -moz-appearance: none;
     min-width: 200px;
-    position: relative;
 }
 
 .familysite select:hover {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.15) 0%,
-            rgba(255, 255, 255, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -513,7 +519,6 @@ footer {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 
-/* 커스텀 화살표 */
 .familysite::after {
     content: '▼';
     position: absolute;
@@ -531,7 +536,6 @@ footer {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* 드롭다운 옵션 스타일링 */
 .familysite select option {
     background: rgba(26, 26, 46, 0.95);
     color: #fff;
@@ -543,48 +547,7 @@ footer {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* 반응형 디자인 */
-@media (max-width: 768px) {
-    .footer-wrap {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .footer {
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-    }
-
-    .familysite select {
-        min-width: 180px;
-        font-size: 0.8rem;
-        padding: 8px 30px 8px 12px;
-    }
-}
-
-/* 메인 페이지에서 footer가 보이도록 하단 여백 추가 */
-#main-page {
-    padding-bottom: 140px;
-}
-
-/* 스크롤 애니메이션 */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeInUp 0.8s ease;
-}
-
-/* 반응형 디자인 */
+/* ======= 반응형 디자인 ======= */
 @media (max-width: 1024px) {
     .category-grid {
         gap: 30px;
@@ -686,9 +649,20 @@ footer {
         font-size: 14px;
     }
 
-    .footer-bottom {
-        font-size: 0.9em;
-        padding: 0 10px;
+    .footer-wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .familysite select {
+        min-width: 180px;
+        font-size: 0.8rem;
+        padding: 8px 30px 8px 12px;
     }
 
     #main-page {
@@ -741,11 +715,6 @@ footer {
     .content-section {
         margin: 0 5px;
         border-radius: 15px;
-    }
-
-    .footer-bottom {
-        font-size: 0.8em;
-        line-height: 1.4;
     }
 
     #main-page {
