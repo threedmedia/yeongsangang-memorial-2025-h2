@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap');
-
+@font-face {
+    font-family: 'PurenJeonnam';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/PureunJeonnam.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +11,7 @@
 }
 
 body {
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'PurenJeonnam', Arial, sans-serif;
     background: #1a1a1a;
     color: #e8e8e8;
     line-height: 1.7;
@@ -365,6 +369,132 @@ body {
     font-size: 1.5rem;
     color: #d4af37;
     margin-bottom: 0.5rem;
+}
+
+/* Footer 디자인 */
+footer {
+    background: linear-gradient(135deg, #2C1810 0%, #1A0F08 100%);
+    backdrop-filter: blur(10px);
+    color: #D4AF37;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.footer {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin-bottom: 0;
+}
+
+.footer:hover {
+    opacity: 1;
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* footer와 familysite 간격 조정 */
+    flex-wrap: wrap;
+}
+
+/* 패밀리사이트 드롭박스 스타일링 */
+.familysite {
+    position: relative;
+}
+
+.familysite select {
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    padding: 10px 35px 10px 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 200px;
+    position: relative;
+}
+
+.familysite select:hover {
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.1) 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.familysite select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+/* 커스텀 화살표 */
+.familysite::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+}
+
+.familysite:hover::after {
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* 드롭다운 옵션 스타일링 */
+.familysite select option {
+    background: rgba(26, 26, 46, 0.95);
+    color: #fff;
+    padding: 10px;
+    border: none;
+}
+
+.familysite select option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .footer-wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .familysite select {
+        min-width: 180px;
+        font-size: 0.8rem;
+        padding: 8px 30px 8px 12px;
+    }
 }
 
 /* 반응형 디자인 */
