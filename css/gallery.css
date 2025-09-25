@@ -34,6 +34,9 @@ body {
     margin-bottom: 3rem;
     border-bottom: 2px solid #d4af37;
     padding-bottom: 2rem;
+    text-decoration: none !important;
+    color: inherit;
+    /* 원래 글자색 유지 */
 }
 
 .sidebar-title {
@@ -62,13 +65,16 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem 1.5rem;
-    text-decoration: none;
-    color: #e8e8e8;
+    text-decoration: none !important;
+    /* ← 밑줄 강제 제거 */
+    color: inherit;
+    /* 원래 글자색 유지 */
     font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s ease;
     border-left: 4px solid transparent;
 }
+
 
 .sidebar-nav a:hover,
 .sidebar-nav a.active {
