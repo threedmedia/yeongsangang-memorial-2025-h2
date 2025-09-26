@@ -41,80 +41,71 @@
                 <p class="section-subtitle">프로젝트의 다양한 활동과 발견들</p>
             </div>
 
-            <!-- 갤러리 그리드 -->
-            <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item">
-                    <div class="image-placeholder">🏛️</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">디지털 박물관 전시</div>
-                        <div class="gallery-item-description">3D 스캔을 통한 몰입형 전시 공간</div>
-                    </div>
-                </div>
+            <div id="gallery-container">
+                <!-- 페이지 1 -->
+                <div class="gallery-page active" data-page="1">
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=14hduKdFXvFDVdHjC3VWZFfa6wRgWGPDY&sz=w2000"
+                            alt="'고과장'팀의 활동 사진">
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">🎭</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">역할극 공연</div>
-                        <div class="gallery-item-description">역사적 순간을 재현한 체험형 공연</div>
                     </div>
-                </div>
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">⚔️</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">고대 무기 유물</div>
-                        <div class="gallery-item-description">시대별 무기의 발전 과정을 보여주는 귀중한 유물</div>
-                    </div>
-                </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1_NzrABfnWmpo_o6-0gleEvx-xz2Pk4LI&sz=w2000"
+                            alt="'고과장'팀의 활동 사진">
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">🏺</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">전통 도자기</div>
-                        <div class="gallery-item-description">나주 지역의 전통 도자기 문화</div>
                     </div>
-                </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1u24Lwg-kmZJV2Fpbf1SK-Z5V-3hMQe8f&sz=w2000"
+                            alt="'고과장'팀의 활동 사진" />
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">📱</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">AR 체험 활동</div>
-                        <div class="gallery-item-description">증강현실을 활용한 역사 체험</div>
                     </div>
-                </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=14b3VI4R0j9yXM3I-8xeDQJLFrA8v927R&sz=w2000"
+                            alt="'고과장'팀의 활동 사진" />
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">🤝</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">팀 협력 활동</div>
-                        <div class="gallery-item-description">함께 문제를 해결하는 협동 미션</div>
-                    </div>
-                </div>
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">🏛️</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">금성관</div>
-                        <div class="gallery-item-description">조선시대 객사 건물의 아름다운 모습</div>
                     </div>
-                </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1rMfnJh8_Dzggta7Z8AGtylvbR3-9xUBE&sz=w2000"
+                            alt="꿈빛파티시엘팀의 활동 사진" />
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">🌳</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">쌍둥이 은행나무</div>
-                        <div class="gallery-item-description">650년 된 나주의 상징적인 보호수</div>
-                    </div>
-                </div>
 
-                <div class="gallery-item">
-                    <div class="image-placeholder">🗿</div>
-                    <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">금성토평비</div>
-                        <div class="gallery-item-description">동학농민운동의 역사를 담은 기념비</div>
+                    </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1UkQ8jFHsP58M7fzz_ygY2UHrO0vSIkBS&sz=w2000"
+                            alt="꿈빛파티시엘팀의 활동 사진" />
+
+                    </div>
+
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1neC-RP5i9QuE-L-Y8imlHjdw6hhZ_L7e&sz=w2000"
+                            alt="농경팀의 활동 사진" />
+
+
+                    </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=13FrallxSs31R8qtVSc66U-TFAIsuXU0s&sz=w2000"
+                            alt="농경팀의 활동 사진" />
+
+
+                    </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1AiICzp8l5d2j4oKAF52L2oEgD47IV3Zf&sz=w2000"
+                            alt="농경팀의 활동 사진" />
+
+
+                    </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1P98mgIhI-H2XggK1QoXbpImDeVpgRJCR&sz=w2000"
+                            alt="고과장팀의 활동 사진" />
+
+                    </div>
+                    <div class="image-card" onclick="openModal(this.querySelector('img'))">
+                        <img src="https://drive.google.com/thumbnail?id=1V9i3wDNeTAz6d1W6ncB-uSfhtOVoAn_4&sz=w2000"
+                            alt="고과장팀의 활동 사진" />
                     </div>
                 </div>
-            </div>
         </section>
     </main>
 

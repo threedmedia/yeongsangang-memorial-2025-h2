@@ -1,489 +1,438 @@
- @font-face {
-     font-family: 'PurenJeonnam';
-     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/PureunJeonnam.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
- }
-
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
-
- body {
-     font-family: 'PurenJeonnam', Arial, sans-serif;
-     background: #1a1a1a;
-     color: #e8e8e8;
-     line-height: 1.7;
-     overflow-x: hidden;
- }
-
- /* 상단 헤더 */
- .header {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     background: linear-gradient(180deg, rgba(44, 24, 16, 0.95), rgba(26, 15, 8, 0.95));
-     backdrop-filter: blur(10px);
-     border-bottom: 3px solid #d4af37;
-     padding: 1rem 0;
-     z-index: 1000;
-     text-align: center;
-     text-decoration: none;
- }
-
- .header-title {
-     font-size: 1.8rem;
-     color: #d4af37;
-     font-weight: 700;
-     margin-bottom: 0.3rem;
-     text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
- }
-
- .header-subtitle {
-     font-size: 1rem;
-     color: #b8860b;
-     font-weight: 400;
- }
-
- /* 메인 컨텐츠 */
- .main-content {
-     margin-top: 120px;
-     /* 헤더 높이만큼 여백 추가 */
-     min-height: 100vh;
-     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
- }
-
- /* 히어로 섹션 */
- .hero-section {
-     height: 40vh;
-     background: linear-gradient(rgba(0, 0, 0, 0.6),
-             rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     position: relative;
- }
-
- .hero-content h1 {
-     font-size: 3rem;
-     color: #d4af37;
-     font-weight: 700;
-     margin-bottom: 1rem;
-     text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
-     animation: fadeInUp 1s ease-out;
- }
-
- .hero-content p {
-     font-size: 1.2rem;
-     color: #b8b8b8;
-     max-width: 600px;
-     animation: fadeInUp 1s ease-out 0.3s both;
- }
-
- @keyframes fadeInUp {
-     from {
-         opacity: 0;
-         transform: translateY(30px);
-     }
-
-     to {
-         opacity: 1;
-         transform: translateY(0);
-     }
- }
-
- /* 컨텐츠 섹션들 */
- .content-section {
-     padding: 4rem 3rem;
-     max-width: 1400px;
-     margin: 0 auto;
- }
-
- .section-header {
-     text-align: center;
-     margin-bottom: 3rem;
- }
-
- .section-title {
-     font-size: 2.5rem;
-     color: #d4af37;
-     font-weight: 600;
-     margin-bottom: 1rem;
-     position: relative;
-     display: inline-block;
- }
-
- .section-title::after {
-     content: '';
-     position: absolute;
-     bottom: -10px;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 80px;
-     height: 3px;
-     background: #d4af37;
- }
-
- .section-subtitle {
-     font-size: 1.1rem;
-     color: #999;
-     font-weight: 300;
- }
-
- /* 갤러리 그리드 */
- .gallery-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-     gap: 1.5rem;
-     margin-top: 2rem;
- }
-
- .gallery-item {
-     position: relative;
-     background: linear-gradient(135deg, rgba(44, 24, 16, 0.5), rgba(26, 15, 8, 0.5));
-     border-radius: 15px;
-     overflow: hidden;
-     border: 2px solid #d4af37;
-     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-     transition: all 0.3s ease;
-     cursor: pointer;
- }
-
- .gallery-item:hover {
-     transform: translateY(-5px) scale(1.02);
-     box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
- }
-
- .gallery-item img {
-     width: 100%;
-     height: 250px;
-     object-fit: cover;
-     transition: all 0.3s ease;
- }
-
- .gallery-item:hover img {
-     transform: scale(1.05);
- }
-
- .gallery-item-overlay {
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     right: 0;
-     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-     padding: 2rem 1.5rem 1.5rem;
-     transform: translateY(100%);
-     transition: all 0.3s ease;
- }
-
- .gallery-item:hover .gallery-item-overlay {
-     transform: translateY(0);
- }
-
- .gallery-item-title {
-     font-size: 1.2rem;
-     color: #d4af37;
-     font-weight: 600;
-     margin-bottom: 0.5rem;
- }
-
- .gallery-item-description {
-     font-size: 0.9rem;
-     color: #e0e0e0;
-     line-height: 1.4;
- }
-
-
-
- /* 이미지 플레이스홀더 */
- .image-placeholder {
-     width: 100%;
-     height: 250px;
-     background: linear-gradient(45deg, rgba(44, 24, 16, 0.3), rgba(212, 175, 55, 0.1));
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     font-size: 3rem;
-     color: #d4af37;
-     border-bottom: 1px solid #d4af37;
- }
-
- /* 라이트박스 모달 */
- .lightbox {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: rgba(0, 0, 0, 0.9);
-     display: none;
-     align-items: center;
-     justify-content: center;
-     z-index: 2000;
-     backdrop-filter: blur(10px);
- }
-
- .lightbox.active {
-     display: flex;
- }
-
- .lightbox-content {
-     max-width: 90%;
-     max-height: 90%;
-     position: relative;
- }
-
- .lightbox-image {
-     width: 100%;
-     height: auto;
-     border-radius: 10px;
-     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
- }
-
- .lightbox-close {
-     position: absolute;
-     top: -50px;
-     right: 0;
-     background: #d4af37;
-     color: #1a1a1a;
-     border: none;
-     width: 40px;
-     height: 40px;
-     border-radius: 50%;
-     font-size: 1.5rem;
-     cursor: pointer;
-     transition: all 0.3s ease;
- }
-
- .lightbox-close:hover {
-     background: #f1c40f;
-     transform: scale(1.1);
- }
-
- .lightbox-info {
-     position: absolute;
-     bottom: -80px;
-     left: 0;
-     right: 0;
-     text-align: center;
-     color: #e8e8e8;
- }
-
- .lightbox-title {
-     font-size: 1.5rem;
-     color: #d4af37;
-     margin-bottom: 0.5rem;
- }
-
- /* Footer 디자인 */
- footer {
-     background: linear-gradient(135deg, #2C1810 0%, #1A0F08 100%);
-     backdrop-filter: blur(10px);
-     color: #D4AF37;
-     font-weight: bold;
-     text-align: center;
-     width: 100%;
-     margin-top: auto;
-     padding: 30px 0;
-     border-top: 1px solid rgba(255, 255, 255, 0.1);
-     position: relative;
-     z-index: 2;
- }
-
- .footer {
-     font-size: 0.9rem;
-     letter-spacing: 1px;
-     opacity: 0.8;
-     transition: opacity 0.3s ease;
-     margin-bottom: 0;
- }
-
- .footer:hover {
-     opacity: 1;
- }
-
- .footer-wrap {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 30px;
-     flex-wrap: wrap;
- }
-
- /* 패밀리사이트 드롭박스 스타일링 */
- .familysite {
-     position: relative;
- }
-
- .familysite select {
-     background: linear-gradient(135deg,
-             rgba(255, 255, 255, 0.1) 0%,
-             rgba(255, 255, 255, 0.05) 100%);
-     border: 1px solid rgba(255, 255, 255, 0.2);
-     border-radius: 8px;
-     color: #fff;
-     padding: 10px 35px 10px 15px;
-     font-size: 0.85rem;
-     font-weight: 500;
-     letter-spacing: 0.5px;
-     cursor: pointer;
-     transition: all 0.3s ease;
-     backdrop-filter: blur(5px);
-     appearance: none;
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     min-width: 200px;
-     position: relative;
- }
-
- .familysite select:hover {
-     background: linear-gradient(135deg,
-             rgba(255, 255, 255, 0.15) 0%,
-             rgba(255, 255, 255, 0.1) 100%);
-     border-color: rgba(255, 255, 255, 0.3);
-     transform: translateY(-1px);
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
- }
-
- .familysite select:focus {
-     outline: none;
-     border-color: rgba(255, 255, 255, 0.5);
-     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
- }
-
- /* 커스텀 화살표 */
- .familysite::after {
-     content: '▼';
-     position: absolute;
-     right: 12px;
-     top: 50%;
-     transform: translateY(-50%);
-     color: rgba(255, 255, 255, 0.7);
-     pointer-events: none;
-     font-size: 0.7rem;
-     transition: all 0.3s ease;
- }
-
- .familysite:hover::after {
-     color: rgba(255, 255, 255, 0.9);
-     transform: translateY(-50%) scale(1.1);
- }
-
- /* 드롭다운 옵션 스타일링 */
- .familysite select option {
-     background: rgba(26, 26, 46, 0.95);
-     color: #fff;
-     padding: 10px;
-     border: none;
- }
-
- .familysite select option:hover {
-     background: rgba(255, 255, 255, 0.1);
- }
-
- /* 스크롤 인디케이터 */
- .scroll-indicator {
-     position: fixed;
-     top: 0;
-     right: 0;
-     width: 4px;
-     height: 100%;
-     background: rgba(212, 175, 55, 0.2);
-     z-index: 999;
- }
-
- .scroll-progress {
-     width: 100%;
-     background: #d4af37;
-     height: 0%;
-     transition: height 0.1s ease;
- }
-
- /* 반응형 디자인 */
- @media (max-width: 768px) {
-     .header-title {
-         font-size: 1.4rem;
-     }
-
-     .header-subtitle {
-         font-size: 0.9rem;
-     }
-
-     .main-content {
-         margin-top: 100px;
-     }
-
-     .hero-section {
-         height: 30vh;
-         padding: 0 1rem;
-     }
-
-     .hero-content h1 {
-         font-size: 2rem;
-         line-height: 1.2;
-     }
-
-     .hero-content p {
-         font-size: 1rem;
-     }
-
-     .content-section {
-         padding: 2.5rem 1.2rem;
-     }
-
-     .section-title {
-         font-size: 2rem;
-     }
-
-     .gallery-grid {
-         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-         gap: 1rem;
-     }
-
-     .gallery-item img,
-     .image-placeholder {
-         height: 200px;
-     }
-
-     .lightbox-content {
-         max-width: 95%;
-         max-height: 80%;
-     }
-
-     .lightbox-info {
-         position: relative;
-         bottom: 0;
-         margin-top: 1rem;
-         padding: 0 1rem;
-     }
-
-     .footer-wrap {
-         flex-direction: column;
-         gap: 20px;
-     }
-
-     .footer {
-         font-size: 0.8rem;
-         margin-bottom: 10px;
-     }
-
-     .familysite select {
-         min-width: 180px;
-         font-size: 0.8rem;
-         padding: 8px 30px 8px 12px;
-     }
- }
-
- @media (max-width: 480px) {
-     .gallery-grid {
-         grid-template-columns: 1fr;
-     }
-
-     .hero-content h1 {
-         font-size: 1.8rem;
-     }
- }
+@font-face {
+    font-family: 'PurenJeonnam';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/PureunJeonnam.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4af37;
+    --gold-dim: rgba(212, 175, 55, 0.3);
+    --bg1: #1a1a1a;
+    --bg2: #2d2d2d;
+    --brown1: #2C1810;
+    --brown2: #1A0F08;
+}
+
+body {
+    font-family: 'PurenJeonnam', Arial, sans-serif;
+    background: var(--bg1);
+    color: #e8e8e8;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* 상단 헤더 */
+.header {
+    position: fixed;
+    inset: 0 auto auto 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(44, 24, 16, 0.95), rgba(26, 15, 8, 0.95));
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--gold);
+    padding: 1rem 0;
+    z-index: 1000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: .3rem;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, .3);
+}
+
+.header-subtitle {
+    font-size: 1rem;
+    color: #b8860b;
+    font-weight: 400;
+}
+
+/* 메인 컨텐츠 */
+.main-content {
+    margin-top: 120px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg1) 100%);
+}
+
+/* 히어로 섹션 */
+.hero-section {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(212, 175, 55, .4);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #b8b8b8;
+    max-width: 600px;
+    animation: fadeInUp 1s ease-out .3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 섹션 */
+.content-section {
+    padding: 4rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #999;
+    font-weight: 300;
+}
+
+/* ✅ 갤러리 (현재 HTML 구조에 맞춤) */
+#gallery-container {
+    width: 100%;
+}
+
+.gallery-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+}
+
+.image-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: zoom-in;
+    border: 2px solid var(--gold);
+    background: linear-gradient(135deg, rgba(44, 24, 16, .5), rgba(26, 15, 8, .5));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .4);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    aspect-ratio: 4/3;
+}
+
+.image-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, .28);
+    border-color: #f1c40f;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .25s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.04);
+}
+
+/* 라이트박스 */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .9);
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.lightbox-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .8);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: var(--gold);
+    color: #1a1a1a;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.lightbox-close:hover {
+    background: #f1c40f;
+    transform: scale(1.1);
+}
+
+.lightbox-info {
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #e8e8e8;
+}
+
+.lightbox-title {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: .5rem;
+}
+
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--brown1) 0%, var(--brown2) 100%);
+    backdrop-filter: blur(10px);
+    color: var(--gold);
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    position: relative;
+    z-index: 2;
+}
+
+.footer {
+    font-size: .9rem;
+    letter-spacing: 1px;
+    opacity: .8;
+    transition: opacity .3s ease;
+    margin-bottom: 0;
+}
+
+.footer:hover {
+    opacity: 1;
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* 패밀리사이트 */
+.familysite {
+    position: relative;
+}
+
+.familysite select {
+    background: linear-gradient(135deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .05) 100%);
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 8px;
+    color: #fff;
+    padding: 10px 35px 10px 15px;
+    font-size: .85rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: all .3s ease;
+    backdrop-filter: blur(5px);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 200px;
+    position: relative;
+}
+
+.familysite select:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, .15) 0%, rgba(255, 255, 255, .1) 100%);
+    border-color: rgba(255, 255, 255, .3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+
+.familysite select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, .5);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .1);
+}
+
+.familysite::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .7);
+    pointer-events: none;
+    font-size: .7rem;
+    transition: all .3s ease;
+}
+
+.familysite:hover::after {
+    color: rgba(255, 255, 255, .9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.familysite select option {
+    background: rgba(26, 26, 46, .95);
+    color: #fff;
+    padding: 10px;
+    border: none;
+}
+
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: rgba(212, 175, 55, .2);
+    z-index: 999;
+}
+
+.scroll-progress {
+    width: 100%;
+    background: var(--gold);
+    height: 0%;
+    transition: height .1s ease;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.4rem;
+    }
+
+    .header-subtitle {
+        font-size: .9rem;
+    }
+
+    .main-content {
+        margin-top: 100px;
+    }
+
+    .hero-section {
+        height: 30vh;
+        padding: 0 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .content-section {
+        padding: 2.5rem 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .gallery-page {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 80%;
+    }
+
+    .lightbox-info {
+        position: relative;
+        bottom: 0;
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
+
+    .footer-wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer {
+        font-size: .8rem;
+        margin-bottom: 10px;
+    }
+
+    .familysite select {
+        min-width: 180px;
+        font-size: .8rem;
+        padding: 8px 30px 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+}
