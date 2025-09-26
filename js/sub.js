@@ -79,3 +79,20 @@ navLinks.forEach(link => {
         }
     });
 });
+
+
+// DOM이 완전히 로드된 후 실행
+document.addEventListener('DOMContentLoaded', function () {
+    // 햄버거 메뉴 버튼 이벤트 리스너 추가
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleSidebar);
+    }
+});
+
+
+function toggleSidebar(event) {
+    event.stopPropagation(); // 이벤트 버블링 방지
+    const sidebar = document.getElementById('sidebar');
+    // ... 나머지 코드
+}
