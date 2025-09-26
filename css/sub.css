@@ -281,6 +281,18 @@ body {
     border-radius: 13px;
 }
 
+.video-item .caption {
+    text-align: center;
+    /* 텍스트 가운데 */
+    margin-top: 8px;
+    /* 영상과 간격 */
+    font-size: 14px;
+    /* (선택) 캡션 크기 */
+    color: #999;
+    /* (선택) 캡션 색상 */
+}
+
+
 /* 인터뷰 섹션 특별 스타일 */
 .interview-section {
     background: linear-gradient(135deg, rgba(44, 24, 16, 0.3), rgba(26, 15, 8, 0.3));
