@@ -1,40 +1,29 @@
-// 사이드바 토글 (모바일) - 개선된 버전
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('open');
-
-    // 사이드바가 열렸을 때 배경 클릭으로 닫기
-    if (sidebar.classList.contains('open')) {
-        setTimeout(() => {
-            document.addEventListener('click', closeSidebarOnOutsideClick);
-        }, 100);
-    } else {
-        document.removeEventListener('click', closeSidebarOnOutsideClick);
-    }
 }
 
-// 사이드바 외부 클릭시 닫기
-function closeSidebarOnOutsideClick(event) {
+// 사이드바 바깥 클릭 시 닫기
+document.addEventListener('click', function (e) {
     const sidebar = document.getElementById('sidebar');
-    const menuToggle = document.querySelector('.menu-toggle');
+    const toggleBtn = document.querySelector('.menu-toggle');
 
-    if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+    if (sidebar.classList.contains('open') &&
+        !sidebar.contains(e.target) &&
+        !toggleBtn.contains(e.target)) {
         sidebar.classList.remove('open');
-        document.removeEventListener('click', closeSidebarOnOutsideClick);
     }
-}
+});
 
-// 모바일에서 네비게이션 클릭 시 사이드바 자동 닫기
-const navLinksForMobile = document.querySelectorAll('.nav-link');
-navLinksForMobile.forEach(link => {
+// 메뉴 항목 클릭 시 닫기 (모바일 UX 개선)
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.remove('open');
-            document.removeEventListener('click', closeSidebarOnOutsideClick);
+            document.getElementById('sidebar').classList.remove('open');
         }
     });
 });
+
 
 // 스크롤 진행률 표시
 window.addEventListener('scroll', () => {
