@@ -1,9 +1,10 @@
+// 사이드바 열기/닫기
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('open');
 }
 
-// 사이드바 바깥 클릭 시 닫기
+// 바깥 클릭 시 닫기
 document.addEventListener('click', function (e) {
     const sidebar = document.getElementById('sidebar');
     const toggleBtn = document.querySelector('.menu-toggle');
@@ -23,7 +24,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
         }
     });
 });
-
 
 // 스크롤 진행률 표시
 window.addEventListener('scroll', () => {
@@ -69,19 +69,13 @@ navLinks.forEach(link => {
     });
 });
 
-
-// DOM이 완전히 로드된 후 실행
+// DOM 로드 후 햄버거 메뉴 이벤트 바인딩
 document.addEventListener('DOMContentLoaded', function () {
-    // 햄버거 메뉴 버튼 이벤트 리스너 추가
     const menuToggle = document.querySelector('.menu-toggle');
     if (menuToggle) {
-        menuToggle.addEventListener('click', toggleSidebar);
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // 이벤트 버블링 방지
+            toggleSidebar();
+        });
     }
 });
-
-
-function toggleSidebar(event) {
-    event.stopPropagation(); // 이벤트 버블링 방지
-    const sidebar = document.getElementById('sidebar');
-    // ... 나머지 코드
-}
