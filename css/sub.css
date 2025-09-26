@@ -480,3 +480,40 @@ footer {
         z-index: -1;
     }
 }
+
+/* PC(데스크탑, 769px 이상)에서는 사이드바 항상 보이기 */
+@media (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0) !important;
+        /* 무조건 보이기 */
+    }
+
+    .menu-toggle {
+        display: none !important;
+        /* 햄버거 버튼 감춤 */
+    }
+
+    .main-content {
+        margin-left: 280px;
+        /* 사이드바 공간 확보 */
+    }
+}
+
+/* 모바일(768px 이하)에서는 토글 방식 */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
